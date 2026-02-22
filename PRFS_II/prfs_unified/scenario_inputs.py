@@ -35,7 +35,7 @@ def render_sidebar(
 ) -> Dict:
     """Draw the sidebar and return a dict of all user choices."""
     sb = st.sidebar
-    sb.title("🇵🇰 PRFS Controls")
+    sb.title("PRFS Controls")
 
     # ── Tax head ─────────────────────────────────────────────────────────
     head = sb.selectbox(

@@ -50,7 +50,7 @@ from prfs_unified.mapping import build_multimodel_future_exog_from_dynamic
 st.set_page_config(
     page_title="Pakistan Revenue Forecasting System (PRFS)",
     layout="wide",
-    page_icon="🇵🇰",
+    page_icon="📈",
 )
 
 # ── Header ───────────────────────────────────────────────────────────────
@@ -59,7 +59,7 @@ st.markdown(
     <div style="background:linear-gradient(135deg,#0a3d62,#1e3799);padding:28px 32px;
     border-radius:12px;margin-bottom:24px">
         <h1 style="color:#fff;margin:0;font-family:'Inter',sans-serif">
-        🇵🇰  Pakistan Revenue Forecasting System (PRFS)</h1>
+          Revenue Forecasting System (PRFS)</h1>
     </div>
     """,
     unsafe_allow_html=True,
