@@ -59,7 +59,7 @@ st.markdown(
     <div style="background:linear-gradient(135deg,#0a3d62,#1e3799);padding:28px 32px;
     border-radius:12px;margin-bottom:24px">
         <h1 style="color:#fff;margin:0;font-family:'Inter',sans-serif">
-          Revenue Forecasting System (PRFS)</h1>
+          Pakistan Revenue Forecasting System (PRFS)</h1>
     </div>
     """,
     unsafe_allow_html=True,
