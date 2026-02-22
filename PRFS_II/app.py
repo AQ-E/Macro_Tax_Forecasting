@@ -279,7 +279,7 @@ with tab2:
                     "RMSE%": row.get("RMSE%", row.get("WAPE%", None)),
                     "Bias%": row.get("Bias%", None),
                     "Stability": row.get("Stability", None),
-                    "n_test": row.get("n_test", 5),
+                    "n_test": row.get("n_test", 8),
                 })
 
     if rows_all:

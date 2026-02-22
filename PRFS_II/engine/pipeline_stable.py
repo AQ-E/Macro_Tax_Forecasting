@@ -177,6 +177,7 @@ class ForecastingPipeline:
                             'PolicyScore': round(policy_score, 2),
                             'VIF': round(vif, 2),
                             'Autocorr-p': round(diag['autocorr_p'], 3),
+                            'n_test': perf.get('n_test', 8),
                             'obj': m
                         }
                         matches.append(match_info)
@@ -302,4 +303,4 @@ class ForecastingPipeline:
         log_actuals = np.log(np.maximum(actuals, 1e-9))
         rmsle = np.sqrt(np.mean((log_actuals - log_preds)**2))
         
-        return {'smape': smape, 'wape': wape, 'rmsle': rmsle}
+        return {'smape': smape, 'wape': wape, 'rmsle': rmsle, 'n_test': len(actuals)}
