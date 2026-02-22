@@ -265,7 +265,7 @@ class ForecastingPipeline:
         except: bg_p = 0.5
         return {'autocorr_p': bg_p}
 
-    def backtest_model(self, model, df, y_col, x_cols, n_test=5):
+    def backtest_model(self, model, df, y_col, x_cols, n_test=12):
         """Standardized Backtest using sMAPE, WAPE and RMSLE on level scale."""
         actuals = []
         preds = []
