@@ -11,3 +11,4 @@ matplotlib
 seaborn
 arch
 scipy
+altair
