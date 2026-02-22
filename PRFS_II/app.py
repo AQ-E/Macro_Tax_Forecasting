@@ -92,6 +92,12 @@ cfg = render_sidebar(
     multimodel_available=multimodel_ok,
 )
 
+# Show data coverage in sidebar for confirmation
+if df_raw is not None:
+    max_year = df_raw.index.max().year if hasattr(df_raw.index, 'year') else "Unknown"
+    st.sidebar.info(f"📅 Data Coverage: FY1996 – FY{max_year}")
+    st.sidebar.caption(f"Last sync: {pd.Timestamp.now().strftime('%H:%M:%S')}")
+
 head = cfg["head"]
 horizon = cfg["horizon"]
 n_sims = cfg["n_sims"]
