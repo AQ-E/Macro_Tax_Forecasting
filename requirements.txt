@@ -12,3 +12,5 @@ seaborn
 arch
 scipy
 altair
+pydeck
+typing-extensions

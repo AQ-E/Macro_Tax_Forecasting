@@ -1,9 +1,0 @@
-streamlit
-pandas
-numpy
-matplotlib
-xlsxwriter
-scikit-learn
-openpyxl
-plotly
-# trigger rebuild
