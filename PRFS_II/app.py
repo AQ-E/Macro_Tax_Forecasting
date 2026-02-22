@@ -536,11 +536,12 @@ with tab4:
             diag_cols = [c for c in lb.columns if c != "obj"]
             head_lb = lb[lb["Tax Head"] == head.upper()][diag_cols].copy()
             if not head_lb.empty:
-                # Deduplicate: keep best (lowest h1_sMAPE%) row per model name
-                if "h1_sMAPE%" in head_lb.columns:
+                # Deduplicate: keep best (lowest sMAPE%) row per model name
+                sort_col_diag = "h1_sMAPE%" if "h1_sMAPE%" in head_lb.columns else "sMAPE%"
+                if sort_col_diag in head_lb.columns:
                     head_lb = (
                         head_lb
-                        .sort_values("h1_sMAPE%", ascending=True)
+                        .sort_values(sort_col_diag, ascending=True)
                         .drop_duplicates(subset=["Model"], keep="first")
                     )
                 # Show only the selected columns
