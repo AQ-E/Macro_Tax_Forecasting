@@ -255,12 +255,15 @@ with tab2:
             (lb["Type"] == "Policy")
         ].copy()
         if not dsm_rows.empty:
-            # Deduplicate: if a model ran for multiple bases, keep best h1_sMAPE% per model name
-            dsm_rows = (
-                dsm_rows
-                .sort_values("h1_sMAPE%", ascending=True)
-                .drop_duplicates(subset=["Model"], keep="first")
-            )
+            # Deduplicate: if a model ran for multiple bases, keep best sMAPE% per model name
+            # Check which metric column exists in the leaderboard
+            sort_col = "h1_sMAPE%" if "h1_sMAPE%" in dsm_rows.columns else "sMAPE%"
+            if sort_col in dsm_rows.columns:
+                dsm_rows = (
+                    dsm_rows
+                    .sort_values(sort_col, ascending=True)
+                    .drop_duplicates(subset=["Model"], keep="first")
+                )
             for _, row in dsm_rows.iterrows():
                 rows_all.append({
                     "Model": f"DSM ({row['Model']})",
